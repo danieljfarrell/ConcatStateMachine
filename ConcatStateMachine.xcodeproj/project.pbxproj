@@ -10,6 +10,11 @@
 		653B068B1C81EF4300B01BD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653B068A1C81EF4300B01BD8 /* AppDelegate.swift */; };
 		653B068D1C81EF4300B01BD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653B068C1C81EF4300B01BD8 /* Assets.xcassets */; };
 		653B06901C81EF4300B01BD8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 653B068E1C81EF4300B01BD8 /* MainMenu.xib */; };
+		653B06991C81EF5E00B01BD8 /* ConcatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653B06971C81EF5E00B01BD8 /* ConcatViewController.swift */; };
+		653B069A1C81EF5E00B01BD8 /* ConcatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 653B06981C81EF5E00B01BD8 /* ConcatViewController.xib */; };
+		653B069C1C81F4D800B01BD8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653B069B1C81F4D800B01BD8 /* Model.swift */; };
+		653B069E1C81F70600B01BD8 /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653B069D1C81F70600B01BD8 /* StateMachine.swift */; };
+		653B06A01C81F72700B01BD8 /* ConcatState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653B069F1C81F72700B01BD8 /* ConcatState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +23,11 @@
 		653B068C1C81EF4300B01BD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		653B068F1C81EF4300B01BD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		653B06911C81EF4300B01BD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		653B06971C81EF5E00B01BD8 /* ConcatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcatViewController.swift; sourceTree = "<group>"; };
+		653B06981C81EF5E00B01BD8 /* ConcatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConcatViewController.xib; sourceTree = "<group>"; };
+		653B069B1C81F4D800B01BD8 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		653B069D1C81F70600B01BD8 /* StateMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
+		653B069F1C81F72700B01BD8 /* ConcatState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcatState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +61,11 @@
 			isa = PBXGroup;
 			children = (
 				653B068A1C81EF4300B01BD8 /* AppDelegate.swift */,
+				653B06971C81EF5E00B01BD8 /* ConcatViewController.swift */,
+				653B06981C81EF5E00B01BD8 /* ConcatViewController.xib */,
+				653B069B1C81F4D800B01BD8 /* Model.swift */,
+				653B069F1C81F72700B01BD8 /* ConcatState.swift */,
+				653B069D1C81F70600B01BD8 /* StateMachine.swift */,
 				653B068C1C81EF4300B01BD8 /* Assets.xcassets */,
 				653B068E1C81EF4300B01BD8 /* MainMenu.xib */,
 				653B06911C81EF4300B01BD8 /* Info.plist */,
@@ -117,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				653B068D1C81EF4300B01BD8 /* Assets.xcassets in Resources */,
+				653B069A1C81EF5E00B01BD8 /* ConcatViewController.xib in Resources */,
 				653B06901C81EF4300B01BD8 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,7 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				653B069C1C81F4D800B01BD8 /* Model.swift in Sources */,
+				653B06A01C81F72700B01BD8 /* ConcatState.swift in Sources */,
+				653B06991C81EF5E00B01BD8 /* ConcatViewController.swift in Sources */,
 				653B068B1C81EF4300B01BD8 /* AppDelegate.swift in Sources */,
+				653B069E1C81F70600B01BD8 /* StateMachine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
