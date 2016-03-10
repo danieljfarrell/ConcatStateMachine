@@ -50,8 +50,42 @@ class ConcatViewController: NSViewController, StateMachineDelegate {
         self.progressIndicator.hidden = true
     }
     
-    // MARK: State machine delegate
+    // MARK: Repsonder Chain
+    @IBAction func exportPDF(sender: AnyObject) {
+        Swift.print("exportPDF()")
+    }
     
+    @IBAction func delete(sender: AnyObject) {
+        Swift.print("delete()")
+    }
+    
+    @IBAction func deleteAll(sender: AnyObject) {
+        Swift.print("deleteAll()")
+    }
+    
+    @IBAction func importFiles(sender: AnyObject) {
+        Swift.print("importFiles()")
+        // Make up some fake URLs to import 
+        // can cause a state transition
+        let newURLs = [NSURL(fileURLWithPath: "MyImageFile.png"), NSURL(fileURLWithPath: "MyDocument.pdf")]
+        let newItems = newURLs.map { (url) -> FileItem in
+            return FileItem(fileURL: url)
+        }
+        self.insertItems(newItems, at: nil)
+    }
+    
+}
+
+
+// MARK: State machine delegate
+
+/* This extention holds the state machine delegate method which 
+update the view and model on a state transition. It also has
+methods which trigger transitions. */
+
+extension ConcatViewController {
+    
+   
     // Will transition handles update to the model
     func willTransitionFrom(from: StateType, to: StateType) {
         switch (from, to) {
@@ -77,7 +111,7 @@ class ConcatViewController: NSViewController, StateMachineDelegate {
             // State has changed and items have been inserted into the
             // model object. In here we update the user interface.
             self.tableView.reloadData()
-        
+            
         case (.Inserting, .Loading(let completionHandler)):
             
             let qualityOfServiceClass = QOS_CLASS_USER_INITIATED
@@ -96,9 +130,9 @@ class ConcatViewController: NSViewController, StateMachineDelegate {
                     // Executed on main thread
                     completionHandler()
                 })
-            })
+                })
             
-        
+            
         case (.Loading, .Ready):
             // Update UI
             self.progressIndicator.hidden = true
@@ -133,30 +167,6 @@ class ConcatViewController: NSViewController, StateMachineDelegate {
     
     func transitionToReady() {
         machine.state = .Ready
-    }
-    
-    // MARK: Repsonder Chain
-    @IBAction func exportPDF(sender: AnyObject) {
-        Swift.print("exportPDF()")
-    }
-    
-    @IBAction func delete(sender: AnyObject) {
-        Swift.print("delete()")
-    }
-    
-    @IBAction func deleteAll(sender: AnyObject) {
-        Swift.print("deleteAll()")
-    }
-    
-    @IBAction func importFiles(sender: AnyObject) {
-        Swift.print("importFiles()")
-        // Make up some fake URLs to import 
-        // can cause a state transition
-        let newURLs = [NSURL(fileURLWithPath: "MyImageFile.png"), NSURL(fileURLWithPath: "MyDocument.pdf")]
-        let newItems = newURLs.map { (url) -> FileItem in
-            return FileItem(fileURL: url)
-        }
-        self.insertItems(newItems, at: nil)
     }
     
 }
